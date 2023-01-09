@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_giot_root" 
+            name="Giot"
+            sequence="100" />
+
+    <menuitem id="menu_giot_device" 
+        name="Device"
+        action="giot.giot_device_view"
+        parent="menu_giot_root"
+        sequence="1" />
+
+    <menuitem id="menu_giot_cmd" 
+        name="Command"
+        action="giot.giot_cmd_view"
+        parent="menu_giot_root"
+        sequence="2" />
+
+    <menuitem id="menu_giot_log" 
+        name="Log"
+        action="giot.giot_log_view"
+        parent="menu_giot_root"
+        sequence="3" />
+</odoo>

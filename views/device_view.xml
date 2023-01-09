@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="giot_device_tree_view" model="ir.ui.view">
+        <field name="name">giot.device.tree</field>
+        <field name="model">giot.device</field>
+        <field name="arch" type="xml">
+            <tree string="Devices">
+                <field name="name"/>
+                <field name="mac"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="giot_device_form_view" model="ir.ui.view">
+        <field name="name">giot.device.form</field>
+        <field name="model">giot.device</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="mac"/>
+                        <field name="dkey"/>
+                        <field name="is_active"/>
+                    </group>
+                    <notebook>
+                        <page name="Logs" string="Device Logs">
+                            <field name="logs" widget="one2many">
+                                <tree string="Logs" editable="bottom"  create="false" no_open="1">
+                                    <field name="raw_log"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="Commands" string="Device Commands">
+                            <field name="cmds" widget="one2many">
+                                <tree string="Logs" editable="bottom"  create="false" no_open="1">
+                                    <field name="method"/>
+                                    <field name="params"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+        
+    <record id="giot_device_view" model="ir.actions.act_window">
+        <field name="name">Giot Devices</field>
+        <field name="res_model">giot.device</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="view_id" ref="giot_device_tree_view"/> -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Looks like no device is register.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_giot_device_user,giot.giot_device_user,model_giot_device,base.group_user,1,1,1,1
+access_giot_device_log_user,giot.giot_device_log_user,model_giot_device_log,base.group_user,1,1,1,1
+access_giot_device_cmd_user,giot.giot_device_cmd_user,model_giot_device_cmd,base.group_user,1,1,1,1

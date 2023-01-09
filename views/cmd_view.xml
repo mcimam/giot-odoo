@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="giot_cmd_tree_view" model="ir.ui.view">
+        <field name="name">giot.cmd.tree</field>
+        <field name="model">giot.device.cmd</field>
+        <field name="arch" type="xml">
+            <tree string="Commands" create="true">
+                <field name="device_id"/>
+                <field name="method"/>
+                <field name="is_executed"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="giot_cmd_view" model="ir.actions.act_window">
+        <field name="name">Devices Commands</field>
+        <field name="res_model">giot.device.cmd</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Looks like there is no command.
+            </p>
+        </field>
+    </record>
+</odoo>
