@@ -7,7 +7,6 @@
             <tree string="Commands" create="true">
                 <field name="device_id"/>
                 <field name="method"/>
-                <field name="is_executed"/>
             </tree>
         </field>
     </record>
